@@ -1,0 +1,51 @@
+#outer_border
+  #inner_border
+    .user-list-details
+      %h4 Customer Plans Details
+      = link_to "Create Plan",new_plan_path(:user_id => params[:user_id]),:id => "new_plan_link"        
+      = will_paginate @users_plans
+    .customer-details
+      %table.tablesorter{:cellspacing => "1"}
+        %thead
+          %tr
+            %th
+              S.No
+            %th
+              Plan Name
+            %th
+              Plan Cost
+            %th
+              Plan Emi Months
+            %th
+              Plan start Date
+            %th
+              Plan Status     
+            %th
+              Action  
+        %tbody
+          - unless @users_plans.blank?
+            - @users_plans.each do |user_plan|
+              %tr
+                - if params[:page].blank?
+                  - @serial_number = @users_plans.index(user_plan) + 1
+                - else
+                  - @serial_number = ((params[:page].to_i - 1) * session[:per_page_plans].to_i) + (@users_plans.index(user_plan) + 1)
+                %td
+                  = @serial_number
+                %td
+                  = link_to user_plan.name,edit_plan_path(user_plan),:id => "new_plan_link"
+                %td
+                  = user_plan.cost
+                %td
+                  = user_plan.emi_months
+                %td
+                  = user_plan.start_date.in_time_zone('Chennai').strftime('%a %b %d, %Y')
+                %td
+                  = user_plan.status  
+                %td
+                  = link_to "Payment List",payments_path(:plan_id => user_plan.id),:id => "new_plan_link"
+          - else
+            %tr
+              %td
+                No Records In Date Base
+      = link_to "Back",users_list_admins_path,:id => "new_plan_link"             

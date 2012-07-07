@@ -1,0 +1,12 @@
+- if @current_controller == "admins" && @current_action == "users_list"
+  .user-list-link
+    = "Customer's List"
+- else
+  = link_to "Customer's List",users_list_admins_path,:id => "users_list" 
+  
+- if @current_controller == "admins" && @current_action == "agents_list"
+  .agent-list-link
+    = "Agent's List"
+- else
+  .admin-agents
+    = link_to "Agent's List",agents_list_admins_path,:id => "agents_list"           

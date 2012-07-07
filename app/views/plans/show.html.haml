@@ -1,0 +1,24 @@
+#outer_border
+  #inner_border
+    .user-list-details
+      %h4 Plan Details
+    .plan-name-label
+      %label Plan Name
+    .plan-name-value
+      = @plan.name
+    .plan-cost-label
+      %label Plan Cost
+    .plan-cost-value
+      = @plan.cost
+    .plan-emi-label
+      %label Emi Months
+    .plan-emi-value        
+      = @plan.emi_months
+    .plan-start-label 
+      %label Plan Start Date    
+    .plan-start-value
+      = @plan.start_date.in_time_zone('Chennai').strftime('%a %b %d, %Y')
+    .back-link
+      = link_to "Back",users_list_admins_path,:id => "new_plan_link"  
+      |
+      = link_to "Edit Plan Details",edit_plan_path(:id => @plan.id),:id => "new_plan_link"     

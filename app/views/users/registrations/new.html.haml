@@ -1,0 +1,42 @@
+#sign_up_outer_border
+  #sign_up_inner_border
+    #sign_up_title
+      Create a New Suraksha Holidays Emi Account
+    = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+      = devise_error_messages!
+      .user_name_label
+        %label Username
+      .user_name_field
+        = f.text_field :username
+      .user_first_name_label
+        %label Firstname
+      .user_first_name_field
+        = f.text_field :first_name
+      .user_last_name_label
+        %label Lastname
+      .user_last_name_field
+        = f.text_field :last_name
+      .user_email_label
+        %label Email
+      .user_email_field
+        = f.text_field :email  
+      .user_password_label
+        %label Password
+      .user_password_field
+        = f.password_field :password
+      .user_password_confirmation_label
+        %label Passwordconfirmation
+      .user_password_confirmation_field
+        = f.password_field :password_confirmation
+      .user_mobile_label
+        %label Mobile phone
+      .user_mobile_field
+        = f.text_field :mobile_no
+      .user_address_label
+        %label Address
+      .user_address_field
+        = f.text_area :address
+      .user_submit_button
+        = f.submit "Create Account",:class => "user_submit"                   
+      .user_shared_links
+        = render 'users/shared/links'

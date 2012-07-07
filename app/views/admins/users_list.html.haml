@@ -1,0 +1,38 @@
+#outer_border
+  #inner_border
+    #menu_links
+      = render 'shared/menu_links'
+      #admin_info
+        = current_user.first_name
+        %p
+          = current_user.mobile_no 
+      #admin_photo
+        = image_tag("user.png",:width => "80",:heigth => "80")
+    .user-list-details
+      %h4 List of Customer
+      = will_paginate @users
+    .customer-details
+      %table.tablesorter{:cellspacing => "1"}
+        %thead
+          %tr
+            %th
+              S.No
+            %th
+              Customer Name
+            %th
+              Actions        
+        %tbody
+          - unless @users.blank?
+            - @users.each do |user|
+              %tr
+                - if params[:page].blank?
+                  - @serial_number = @users.index(user) + 1
+                - else
+                  - @serial_number = ((params[:page].to_i - 1) * session[:per_page_users_list].to_i) + (@users.index(user) + 1)
+                %td
+                  = @serial_number
+                %td
+                  = user.username
+                %td
+                  = link_to "Plans List",plans_path(:user_id => user.id),:id => "new_plan_link"
+                          

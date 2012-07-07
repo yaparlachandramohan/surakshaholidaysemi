@@ -1,0 +1,22 @@
+#outer_border
+  #inner_border
+    .user-list-details
+      %h4 Payment Details
+    .plan-name-label
+      %label Pay Amount
+    .plan-name-value
+      = @payment.amount
+    .plan-cost-label
+      %label Emi Month
+    .plan-cost-value
+      = @payment.emi_month
+    .plan-emi-label
+      %label Payment Date
+    .plan-emi-value
+      = @payment.created_at.in_time_zone('Chennai').strftime('%a %b %d, %Y')
+    .back-link
+      = link_to "Back",users_list_admins_path,:id => "new_plan_link"  
+      |
+      = link_to "Edit Payment Details",edit_payment_path(:id => @payment.id),:id => "new_plan_link"       
+   
+        

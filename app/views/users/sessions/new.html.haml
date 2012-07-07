@@ -1,0 +1,40 @@
+#sign_in_outer_border
+  #sign_in_inner_border
+    #sign_in_inner_image
+      = image_tag("key_lock.gif")
+      #login
+        - if params[:form] == "Admin"
+          Admin Login
+        - else
+          - if params[:form] == "Customer"
+            Customer's Login
+          - else
+            Agent's Login
+      = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|  
+        .full_name_label
+          %label Username 
+        .full_name_field
+          = f.text_field :login
+        .pass_word_label
+          %label Password 
+        .pass_word_field
+          = f.password_field :password
+        - if devise_mapping.rememberable?
+          #check_box_field
+            = f.check_box :remember_me
+            %label Rememberme
+        .submit_button
+          = f.submit "Login",:class => "submit-js"
+      #shared_links
+        = render 'users/shared/links'
+
+:javascript
+  $('.submit-js').click(function(){
+    if($("#user_login").val() == "") 
+    {
+      if($("#user_password").val() == "")
+      {
+        alert("Plase Enter Username & Pasword to Login");
+      }
+    }
+  }); 

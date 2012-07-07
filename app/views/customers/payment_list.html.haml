@@ -1,0 +1,51 @@
+#outer_border
+  #inner_border
+    #user_info
+      = current_user.first_name
+      %p
+        = current_user.mobile_no
+    #user_photo
+      = image_tag("user.png",:width=> "80",:heigth=> "80")  
+    .customer-list-details
+      %h4 Customer Payment List
+      = will_paginate @user_payments
+    .customer-details  
+      %table.tablesorter{:cellspacing => "1"}
+        %thead
+          %tr
+            %th
+              S.No
+            %th
+              Emi Month
+            %th
+              Pay Amount
+            %th
+              Remaining Amount
+            %th
+              Remaining Emi Months
+            %th
+              Payment Date   
+        %tbody
+          - unless @user_payments.blank?
+            - @total_remaining_amount = 0
+            - @user_payments.each do |payment|
+              %tr
+                - if params[:page].blank?
+                  - @serial_number = @user_payments.index(payment) + 1
+                - else
+                  - @serial_number = ((params[:page].to_i - 1) * session[:per_page_user_payment].to_i) + (@user_payments.index(payment) + 1)
+                %td
+                  = @serial_number
+                %td
+                  = payment.emi_month
+                %td
+                  = payment.amount
+                - @customer_plan = Plan.where('id =?',payment.plan_id).first
+                - @total_remaining_amount += payment.amount                         
+                %td
+                  = @customer_plan.cost - @total_remaining_amount
+                %td
+                  = @customer_plan.emi_months - payment.emi_month
+                %td
+                  = payment.created_at.in_time_zone('Chennai').strftime('%a %b %d, %Y')        
+      = link_to "Back",plans_list_customers_path,:id => "new_plan_link"            

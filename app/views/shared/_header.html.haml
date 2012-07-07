@@ -1,0 +1,33 @@
+- unless current_user.blank?
+  - if current_user.role == "admin"
+    = link_to(image_tag("header.jpg"),users_list_admins_path)
+  - else
+    - if current_user
+      = link_to(image_tag("header.jpg"),plans_list_customers_path)
+  #upper_layer_home_link
+    = link_to "Home","http://www.surakshaholidays.com",:target => "_blank",:class => "home-link"
+  #upper_layer_plan_link
+    = link_to "Plans Details",plans_details_dashboards_path,:class => "plans-link"
+  #upper_layer_username
+    - if user_signed_in?
+      = current_user.username.titleize   
+  #upper_layer_edit
+    = link_to "Edit Account",edit_user_registration_path,:class => "edit-account"
+  #upper_layer_logout
+    = link_to "Logout",destroy_user_session_path,:method=>"delete",:class => "logout"      
+  #right_side_image
+    = render 'shared/right_side_image'  
+- else
+  = link_to(image_tag("header.jpg"),root_path)
+  #upper_layer_home_link
+    = link_to "Home","http://www.surakshaholidays.com",:target => "_blank",:class => "home-link"
+  #upper_layer_plan_link
+    = link_to "Plans Details",plans_details_dashboards_path,:class => "plans-link"
+  #upper_layer_admin_link
+    = link_to "Admin Login",new_user_session_path(:form => "Admin"),:class => "admin-link"
+  #upper_layer_customer_link
+    = link_to "Customer Login",new_user_session_path(:form => "Customer"),:class =>"customer-link" 
+  #upper_layer_agent_link
+    = link_to "Agent Login",new_user_session_path(:form => "Agent"),:class => "agent-link" 
+  #right_side_image
+    = render 'shared/right_side_image'

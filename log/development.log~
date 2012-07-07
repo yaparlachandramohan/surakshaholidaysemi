@@ -1,0 +1,500 @@
+
+
+Started POST "/plans" for 127.0.0.1 at 2012-07-01 15:01:12 +0530
+Processing by PlansController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YBr5TbcL7TVdqj0jqgR5Z3b+SiIpotFaodo1oaXGCMM=", "customer_id"=>"3", "plan"=>{"name"=>"", "cost"=>"30000", "emi_months"=>"6", "start_date"=>"07/01/2012"}, "commit"=>"Create Plan"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `plans` (`cost`, `created_at`, `customer_id`, `emi_months`, `name`, `start_date`, `updated_at`) VALUES (30000, '2012-07-01 09:31:12', 3, 6, '', '2012-01-07', '2012-07-01 09:31:12')
+  [1m[36m (33.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/plans/1
+Completed 302 Found in 39ms (ActiveRecord: 33.7ms)
+
+
+Started GET "/plans/1" for 127.0.0.1 at 2012-07-01 15:01:12 +0530
+Processing by PlansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mPlan Load (0.2ms)[0m  [1mSELECT `plans`.* FROM `plans` WHERE `plans`.`id` = 1 LIMIT 1[0m
+  Rendered plans/show.html.haml within layouts/application (0.8ms)
+  Rendered shared/_right_side_image.html.haml (0.1ms)
+  Rendered shared/_header.html.haml (1.9ms)
+Completed 200 OK in 40ms (Views: 38.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-01 15:01:12 +0530
+Served asset /application.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/admins.css?body=1" for 127.0.0.1 at 2012-07-01 15:01:12 +0530
+Served asset /admins.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/agents.css?body=1" for 127.0.0.1 at 2012-07-01 15:01:12 +0530
+Served asset /agents.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2012-07-01 15:01:12 +0530
+Served asset /customers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/dashboards.css?body=1" for 127.0.0.1 at 2012-07-01 15:01:12 +0530
+Served asset /dashboards.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox.css?body=1" for 127.0.0.1 at 2012-07-01 15:01:12 +0530
+Served asset /jquery.fancybox.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plans.css?body=1" for 127.0.0.1 at 2012-07-01 15:01:12 +0530
+Served asset /plans.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/registrations.css?body=1" for 127.0.0.1 at 2012-07-01 15:01:12 +0530
+Served asset /registrations.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/shared.css?body=1" for 127.0.0.1 at 2012-07-01 15:01:12 +0530
+Served asset /shared.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2012-07-01 15:01:12 +0530
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/surakshaholidaysemi.css?body=1" for 127.0.0.1 at 2012-07-01 15:01:12 +0530
+Served asset /surakshaholidaysemi.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:12 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:12 +0530
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/admins.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:12 +0530
+Served asset /admins.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/agents.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:12 +0530
+Served asset /agents.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:12 +0530
+Served asset /customers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-1.7.2.min.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:12 +0530
+Served asset /jquery-1.7.2.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/dashboards.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:12 +0530
+Served asset /dashboards.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-latest.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:12 +0530
+Served asset /jquery-latest.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:12 +0530
+Served asset /jquery.fancybox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.tablesorter.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:12 +0530
+Served asset /jquery.tablesorter.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:12 +0530
+Served asset /plans.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/registrations.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:12 +0530
+Served asset /registrations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/shared.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:12 +0530
+Served asset /shared.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:12 +0530
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/header.jpg" for 127.0.0.1 at 2012-07-01 15:01:12 +0530
+Served asset /header.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/banner.gif" for 127.0.0.1 at 2012-07-01 15:01:12 +0530
+Served asset /banner.gif - 304 Not Modified (0ms)
+
+
+Started GET "/admins/users_list" for 127.0.0.1 at 2012-07-01 15:01:29 +0530
+Processing by AdminsController#users_list as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  Rendered shared/_menu_links.html.haml (0.6ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM `users` WHERE (role IS NULL)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `users` WHERE (role IS NULL)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (role IS NULL) LIMIT 10 OFFSET 0[0m
+  Rendered admins/users_list.html.haml within layouts/application (3.7ms)
+  Rendered shared/_right_side_image.html.haml (0.1ms)
+  Rendered shared/_header.html.haml (1.9ms)
+Completed 200 OK in 21ms (Views: 19.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/admins.css?body=1" for 127.0.0.1 at 2012-07-01 15:01:29 +0530
+Served asset /admins.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-01 15:01:29 +0530
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/agents.css?body=1" for 127.0.0.1 at 2012-07-01 15:01:29 +0530
+Served asset /agents.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2012-07-01 15:01:29 +0530
+Served asset /customers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/dashboards.css?body=1" for 127.0.0.1 at 2012-07-01 15:01:29 +0530
+Served asset /dashboards.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox.css?body=1" for 127.0.0.1 at 2012-07-01 15:01:29 +0530
+Served asset /jquery.fancybox.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plans.css?body=1" for 127.0.0.1 at 2012-07-01 15:01:29 +0530
+Served asset /plans.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/registrations.css?body=1" for 127.0.0.1 at 2012-07-01 15:01:29 +0530
+Served asset /registrations.css - 304 Not Modified (27ms)
+
+
+Started GET "/assets/shared.css?body=1" for 127.0.0.1 at 2012-07-01 15:01:30 +0530
+Served asset /shared.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2012-07-01 15:01:30 +0530
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:30 +0530
+Served asset /jquery.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/surakshaholidaysemi.css?body=1" for 127.0.0.1 at 2012-07-01 15:01:30 +0530
+Served asset /surakshaholidaysemi.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admins.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:30 +0530
+Served asset /admins.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:30 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:30 +0530
+Served asset /customers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/agents.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:30 +0530
+Served asset /agents.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/dashboards.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:30 +0530
+Served asset /dashboards.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-1.7.2.min.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:30 +0530
+Served asset /jquery-1.7.2.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-latest.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:30 +0530
+Served asset /jquery-latest.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:30 +0530
+Served asset /jquery.fancybox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.tablesorter.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:30 +0530
+Served asset /jquery.tablesorter.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:30 +0530
+Served asset /plans.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/registrations.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:30 +0530
+Served asset /registrations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/shared.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:30 +0530
+Served asset /shared.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:30 +0530
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/header.jpg" for 127.0.0.1 at 2012-07-01 15:01:30 +0530
+Served asset /header.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/banner.gif" for 127.0.0.1 at 2012-07-01 15:01:30 +0530
+Served asset /banner.gif - 304 Not Modified (0ms)
+
+
+Started GET "/plans/new?user_id=3" for 127.0.0.1 at 2012-07-01 15:01:32 +0530
+Processing by PlansController#new as HTML
+  Parameters: {"user_id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  Rendered plans/_form.html.haml (3.1ms)
+  Rendered plans/new.html.haml within layouts/application (4.3ms)
+  Rendered shared/_right_side_image.html.haml (0.1ms)
+  Rendered shared/_header.html.haml (1.8ms)
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/admins.css?body=1" for 127.0.0.1 at 2012-07-01 15:01:32 +0530
+Served asset /admins.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-01 15:01:32 +0530
+Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2012-07-01 15:01:32 +0530
+Served asset /customers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/agents.css?body=1" for 127.0.0.1 at 2012-07-01 15:01:32 +0530
+Served asset /agents.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/dashboards.css?body=1" for 127.0.0.1 at 2012-07-01 15:01:32 +0530
+Served asset /dashboards.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox.css?body=1" for 127.0.0.1 at 2012-07-01 15:01:32 +0530
+Served asset /jquery.fancybox.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plans.css?body=1" for 127.0.0.1 at 2012-07-01 15:01:32 +0530
+Served asset /plans.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/registrations.css?body=1" for 127.0.0.1 at 2012-07-01 15:01:32 +0530
+Served asset /registrations.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/shared.css?body=1" for 127.0.0.1 at 2012-07-01 15:01:32 +0530
+Served asset /shared.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2012-07-01 15:01:32 +0530
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/surakshaholidaysemi.css?body=1" for 127.0.0.1 at 2012-07-01 15:01:32 +0530
+Served asset /surakshaholidaysemi.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:32 +0530
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:32 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admins.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:32 +0530
+Served asset /admins.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/agents.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:32 +0530
+Served asset /agents.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:32 +0530
+Served asset /customers.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/dashboards.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:32 +0530
+Served asset /dashboards.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery-1.7.2.min.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:32 +0530
+Served asset /jquery-1.7.2.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-latest.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:32 +0530
+Served asset /jquery-latest.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:32 +0530
+Served asset /jquery.fancybox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.tablesorter.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:32 +0530
+Served asset /jquery.tablesorter.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:32 +0530
+Served asset /plans.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/shared.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:32 +0530
+Served asset /shared.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/registrations.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:32 +0530
+Served asset /registrations.js - 304 Not Modified (23ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:32 +0530
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/header.jpg" for 127.0.0.1 at 2012-07-01 15:01:32 +0530
+Served asset /header.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/banner.gif" for 127.0.0.1 at 2012-07-01 15:01:32 +0530
+Served asset /banner.gif - 304 Not Modified (0ms)
+
+
+Started POST "/plans" for 127.0.0.1 at 2012-07-01 15:01:47 +0530
+Processing by PlansController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YBr5TbcL7TVdqj0jqgR5Z3b+SiIpotFaodo1oaXGCMM=", "customer_id"=>"3", "plan"=>{"name"=>"Swiss Paris", "cost"=>"30000", "emi_months"=>"6", "start_date"=>"07/01/2012"}, "commit"=>"Create Plan"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `plans` (`cost`, `created_at`, `customer_id`, `emi_months`, `name`, `start_date`, `updated_at`) VALUES (30000, '2012-07-01 09:31:47', 3, 6, 'Swiss Paris', '2012-01-07', '2012-07-01 09:31:47')[0m
+  [1m[35m (43.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/plans/1
+Completed 302 Found in 52ms (ActiveRecord: 44.5ms)
+
+
+Started GET "/plans/1" for 127.0.0.1 at 2012-07-01 15:01:47 +0530
+Processing by PlansController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mPlan Load (0.6ms)[0m  SELECT `plans`.* FROM `plans` WHERE `plans`.`id` = 1 LIMIT 1
+  Rendered plans/show.html.haml within layouts/application (0.9ms)
+  Rendered shared/_right_side_image.html.haml (0.1ms)
+  Rendered shared/_header.html.haml (1.8ms)
+Completed 200 OK in 20ms (Views: 16.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-07-01 15:01:47 +0530
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.fancybox.css?body=1" for 127.0.0.1 at 2012-07-01 15:01:47 +0530
+Served asset /jquery.fancybox.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admins.css?body=1" for 127.0.0.1 at 2012-07-01 15:01:47 +0530
+Served asset /admins.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/customers.css?body=1" for 127.0.0.1 at 2012-07-01 15:01:47 +0530
+Served asset /customers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/agents.css?body=1" for 127.0.0.1 at 2012-07-01 15:01:47 +0530
+Served asset /agents.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/dashboards.css?body=1" for 127.0.0.1 at 2012-07-01 15:01:47 +0530
+Served asset /dashboards.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plans.css?body=1" for 127.0.0.1 at 2012-07-01 15:01:47 +0530
+Served asset /plans.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/registrations.css?body=1" for 127.0.0.1 at 2012-07-01 15:01:47 +0530
+Served asset /registrations.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/shared.css?body=1" for 127.0.0.1 at 2012-07-01 15:01:47 +0530
+Served asset /shared.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/surakshaholidaysemi.css?body=1" for 127.0.0.1 at 2012-07-01 15:01:47 +0530
+Served asset /surakshaholidaysemi.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/style.css?body=1" for 127.0.0.1 at 2012-07-01 15:01:47 +0530
+Served asset /style.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:47 +0530
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:47 +0530
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admins.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:47 +0530
+Served asset /admins.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/agents.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:47 +0530
+Served asset /agents.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/customers.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:47 +0530
+Served asset /customers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/dashboards.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:47 +0530
+Served asset /dashboards.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-1.7.2.min.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:47 +0530
+Served asset /jquery-1.7.2.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-latest.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:47 +0530
+Served asset /jquery-latest.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.tablesorter.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:47 +0530
+Served asset /jquery.tablesorter.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/plans.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:47 +0530
+Served asset /plans.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.fancybox.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:47 +0530
+Served asset /jquery.fancybox.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/registrations.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:47 +0530
+Served asset /registrations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/shared.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:47 +0530
+Served asset /shared.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-01 15:01:47 +0530
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/header.jpg" for 127.0.0.1 at 2012-07-01 15:01:47 +0530
+Served asset /header.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/banner.gif" for 127.0.0.1 at 2012-07-01 15:01:47 +0530
+Served asset /banner.gif - 304 Not Modified (0ms)

@@ -1,0 +1,20 @@
+#outer_border
+  #inner_border
+    .user-list-details
+      %h4 Pay Amount
+    = form_for @payment do |f|
+      = hidden_field_tag :plan_id,params[:plan_id]
+      .plan-cost-label
+        %label Pay Amount
+      .plan-cost-field
+        = f.text_field :amount
+      .plan-emi-label
+        %label Emi Month
+      .plan-emi-field
+        = f.select(:emi_month,Payment::PAYMENT_EMI_MONTH)
+      .plan-submit
+        = f.submit "Create Plan",:class => "submit-js"
+      .back-link
+        = link_to "Back",users_list_admins_path,:id => "new_plan_link"   
+          
+        

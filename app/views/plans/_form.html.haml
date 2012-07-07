@@ -1,0 +1,29 @@
+%link{:href => "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.8/themes/ui-lightness/jquery-ui.css", :rel => "stylesheet", :type => "text/css"}
+  %script{:src => "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.8/jquery-ui.min.js"}
+    
+#outer_border
+  #inner_border
+    .user-list-details
+      %h4 Create Plan
+    = form_for @plan do |f|
+      = hidden_field_tag :user_id,params[:user_id]
+      .plan-name-label
+        %label Plan Name
+      .plan-name-field
+        = f.select(:name,Plan::PLANS_NAMES)
+      .plan-cost-label
+        %label Plan Cost
+      .plan-cost-field
+        = f.text_field :cost      
+      .plan-emi-label
+        %label Emi Months
+      .plan-emi-field
+        = f.select(:emi_months,Plan::PLAN_EMI_MONTHS)
+      .plan-start-label 
+        %label Plan Start Date    
+      .plan-start-field
+        = f.text_field :start_date
+      .plan-submit
+        = f.submit "Create Plan",:class => "submit-js"
+      .back-link
+        = link_to "Back",users_list_admins_path,:id => "new_plan_link"   

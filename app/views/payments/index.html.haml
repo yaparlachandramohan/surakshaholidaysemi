@@ -1,0 +1,54 @@
+#outer_border
+  #inner_border
+    .user-list-details
+      %h4 Customer Payment Details
+      - @plan_status = Plan.where('id =?',params[:plan_id]).first
+      - if @plan_status.status == "inactive"
+      - else
+        = link_to "Pay Amount",new_payment_path(:plan_id => params[:plan_id]),:id => "new_plan_link"  
+      = will_paginate @users_payments
+    .customer-details
+      %table.tablesorter{:cellspacing => "1"}
+        %thead
+          %tr
+            %th
+              S.No
+            %th
+              Emi Month
+            %th
+              Pay Amount
+            %th
+              Remaining Amount
+            %th
+              Remaining Emi Months
+            %th
+              Payment Date        
+        %tbody
+          - unless @users_payments.blank?
+            - @total_remaining_amount = 0
+            - @users_payments.each do |user_payment|
+              %tr
+                - if params[:page].blank?
+                  - @serial_number = @users_payments.index(user_payment) + 1
+                - else
+                  - @serial_number = ((params[:page].to_i - 1) * session[:per_page_payments].to_i) + (@users_payments.index(user_payment) + 1)
+                %td
+                  = @serial_number  
+                %td
+                  = user_payment.emi_month
+                %td
+                  = user_payment.amount  
+                - @customer_plans = Plan.where('id =?',user_payment.plan_id).first
+                - @total_remaining_amount += user_payment.amount
+                %td
+                  = @customer_plans.cost - @total_remaining_amount    
+                %td
+                  = @customer_plans.emi_months - user_payment.emi_month
+                %td
+                  = user_payment.created_at.in_time_zone('Chennai').strftime('%a %b %d, %Y')  
+          - else
+            %tr
+              %td
+                No Records In Date Base
+      = link_to "Back",users_list_admins_path,:id => "new_plan_link"                   
+                                

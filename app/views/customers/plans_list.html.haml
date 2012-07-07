@@ -1,0 +1,51 @@
+#outer_border
+  #inner_border 
+    #user_info
+      = current_user.first_name
+      %p
+        = current_user.mobile_no
+    #user_photo
+      = image_tag("user.png",:width=> "80",:heigth=> "80")    
+    .customer-list-details
+      %h4 List of Plans
+      = will_paginate @user_plans
+    .customer-details  
+      %table.tablesorter{:cellspacing => "1"}
+        %thead
+          %tr
+            %th
+              S.No
+            %th
+              Plan Name
+            %th
+              Plan Cost
+            %th
+              Plan Emi Months  
+            %th
+              Plan Start Date
+            %th
+              Plan Status
+            %th
+              Action   
+        %tbody
+          - unless @user_plans.blank?
+            - @user_plans.each do |plan|
+              %tr
+                - if params[:page].blank?
+                  - @serial_number = @user_plans.index(plan) + 1
+                - else
+                  - @serial_number = ((params[:page].to_i - 1) * session[:per_page_user_plan_list].to_i) + (@user_plans.index(plan) + 1)
+                %td
+                  = @serial_number
+                %td
+                  = plan.name
+                %td
+                  = plan.cost
+                %td
+                  = plan.emi_months
+                %td
+                  = plan.start_date.in_time_zone('Chennai').strftime('%a %b %d, %Y')
+                %td
+                  = plan.status                          
+                %td
+                  = link_to "Payment List",payment_list_customers_path(:plan_id => plan.id),:id => "new_plan_link"
