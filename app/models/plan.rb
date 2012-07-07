@@ -22,7 +22,7 @@ class Plan < ActiveRecord::Base
         if plan.start_date == Date.today
           plan.update_attributes(:status => "active")
         end 
-        if plan.start_date + plan.emi_months.month == "2013-01-03"
+        if plan.start_date + plan.emi_months.month == Date.today
           plan.update_attributes(:status => "inactive")
         end 
       end

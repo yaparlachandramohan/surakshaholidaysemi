@@ -35,17 +35,17 @@ end
 
 gem "will_paginate", "~> 3.0.pre2"
 
-#gem 'paperclip'
+gem 'paperclip'
 
 gem 'devise'
 
 gem 'whenever'
 
-#gem 'json'
+gem 'json'
 
-#gem 'mechanize'
+gem 'mechanize'
 
-#gem 'watir-webdriver'
+gem 'watir-webdriver'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

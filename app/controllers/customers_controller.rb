@@ -3,7 +3,7 @@ class CustomersController < ApplicationController
   
   before_filter :authenticate_user!
   require 'will_paginate/array'
-  @@per_page = 12
+  @@per_page = 36
   
   def plans_list
     session[:per_page_user_plan_list] =  @@per_page
